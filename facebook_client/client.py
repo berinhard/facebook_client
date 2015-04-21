@@ -14,3 +14,8 @@ class EventsApi(object):
 
     def __init__(self, session):
         self.session = session
+
+    def get_by_id(self, event_id):
+        path = "{0}{1}/".format(self.base_path, event_id)
+        response = self.session.get(path)
+        return response
